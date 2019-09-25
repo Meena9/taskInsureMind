@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <canvas id="lineChart"></canvas>
+</div>
+<div class="container">
+  <table *ngIf="table_data">
+    <thead role="rowgroup">
+      <tr>
+        <th>Compaign</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Recipient</th>
+        <th>Sent</th>
+        <th>Opened</th>
+        <th>Clicked</th>
+        <th>Bounced</th>
+        <th>Complaint</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let t of table_data">
+      <td>
+        {{ t.title ? t.title : '' }}
+      </td>
+      <td>{{ t.datetime }}</td>
+      <td>{{ t.successStatus }}</td>
+      <td>{{ t.recipients }}</td>
+      <td>{{ t.report.Sent * 100 }}%</td>
+      <td>{{ t.report.Opened * 100 }}%</td>
+      <td>{{ t.report.Clicked * 100 }}%</td>
+      <td>{{ t.report.Bounced * 100 }}%</td>
+
+      <td>{{ t.report.Complaint * 100 }}%</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
